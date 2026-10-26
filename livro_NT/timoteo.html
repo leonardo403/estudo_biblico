@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fluxograma — 1 e 2 Timóteo: Homens de Deus</title>
+<style>
+  *{box-sizing:border-box}
+  body{
+    margin:0;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+    background:#f6f3ec;color:#1c1917;line-height:1.55;
+  }
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 80px}
+
+  header{text-align:center;margin-bottom:30px}
+  .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;color:#a16207;font-weight:700}
+  h1{font-size:clamp(1.45rem,3.6vw,2.3rem);margin:.35rem 0 .3rem}
+  header p{color:#57534e;margin:0;font-size:.95rem}
+  .hint{font-size:.82rem;color:#78716c;margin-top:.7rem}
+  .hint b{color:#b45309}
+
+  .conector{display:flex;justify-content:center;padding:4px 0}
+  .conector span{width:2px;height:34px;background:#d6d3d1;position:relative}
+  .conector span::after{
+    content:"";position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);
+    border-left:7px solid transparent;border-right:7px solid transparent;border-top:9px solid #d6d3d1;
+  }
+
+  .secao-cab{display:flex;align-items:center;gap:12px;margin:0 0 15px}
+  .num{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+       font-weight:800;color:#fff;flex:none;background:var(--c);font-size:.95rem}
+  .secao-cab h2{margin:0;font-size:1.08rem;line-height:1.25}
+  .secao-cab small{display:block;color:#78716c;font-weight:500;font-size:.8rem}
+
+  .grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:14px}
+
+  .card{
+    background:#fff;border-radius:14px;padding:15px 16px 13px;
+    border:1px solid #e7e5e4;border-top:4px solid var(--c);
+    cursor:pointer;transition:.18s;position:relative;
+    box-shadow:0 1px 2px rgba(0,0,0,.04);font-family:inherit;text-align:left;width:100%;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.09)}
+  .card:focus-visible{outline:3px solid var(--c);outline-offset:2px}
+  .card h3{margin:0 0 4px;font-size:.97rem;color:#1c1917}
+  .card .ref{font-size:.77rem;color:var(--c);font-weight:700}
+  .card .mais{font-size:.73rem;color:#a8a29e;margin-top:10px;display:flex;
+              justify-content:space-between;align-items:center}
+  .card .mais span:last-child{font-size:1rem;color:var(--c)}
+
+  footer{text-align:center;color:#a8a29e;font-size:.78rem;margin-top:44px}
+
+  /* ---------- MODAL ---------- */
+  .modal{position:fixed;inset:0;background:rgba(28,25,23,.55);display:none;
+         padding:18px;z-index:50;overflow-y:auto;backdrop-filter:blur(2px)}
+  .modal.aberto{display:flex;align-items:flex-start;justify-content:center}
+  .modal-caixa{background:#fff;border-radius:16px;max-width:720px;width:100%;margin:auto;
+               overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.3);animation:sobe .2s ease}
+  @keyframes sobe{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+  .modal-topo{padding:17px 20px;color:#fff;display:flex;justify-content:space-between;
+              gap:14px;align-items:flex-start;background:var(--c)}
+  .modal-topo h2{margin:0;font-size:1.1rem;line-height:1.3}
+  .modal-topo .ref{font-size:.8rem;opacity:.88;font-weight:600;display:block;margin-top:2px}
+  .fechar{background:rgba(255,255,255,.2);border:0;color:#fff;width:34px;height:34px;
+          border-radius:50%;font-size:1.15rem;cursor:pointer;flex:none;line-height:1}
+  .fechar:hover{background:rgba(255,255,255,.35)}
+  .modal-corpo{padding:20px 20px 26px;max-height:72vh;overflow-y:auto}
+  .versiculo{margin:0 0 16px;padding-left:14px;border-left:3px solid #e7e5e4}
+  .versiculo:last-child{margin-bottom:0}
+  .versiculo b{display:block;color:var(--c);font-size:.76rem;letter-spacing:.05em;
+               text-transform:uppercase;margin-bottom:2px}
+  .versiculo p{margin:0;font-size:.95rem}
+  @media(max-width:520px){
+    .modal{padding:0}
+    .modal-caixa{border-radius:0;min-height:100vh}
+    .modal-corpo{max-height:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Estudo Bíblico</div>
+    <h1>1 e 2 Timóteo — Formando Homens de Deus</h1>
+    <p>Fluxograma de ensino para a igreja</p>
+    <p class="hint">👉 <b>Clique em qualquer assunto</b> para ver os versículos</p>
+  </header>
+
+  <!-- INTRODUÇÃO -->
+  <section style="--c:#57534e">
+    <div class="secao-cab">
+      <div class="num">0</div>
+      <div><h2>Introdução: por que estudar 1 e 2 Timóteo?</h2>
+      <small>Paulo escreve a Timóteo, seu filho na fé, para orientar a igreja em Éfeso</small></div>
+    </div>
+    <div class="grade">
+      <button class="card" data-id="intro">
+        <h3>Contexto e tema central</h3>
+        <div class="ref">1Tm 3:14-15 · 2Tm 3:16-17</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+    </div>
+  </section>
+
+  <div class="conector"><span></span></div>
+
+  <!-- 1 TIMÓTEO -->
+  <section style="--c:#1d4ed8">
+    <div class="secao-cab">
+      <div class="num">1</div>
+      <div><h2>1 Timóteo — Ordem, doutrina e piedade na casa de Deus</h2>
+      <small>Como a igreja deve se organizar e como o homem de Deus deve viver</small></div>
+    </div>
+    <div class="grade">
+      <button class="card" data-id="t1-1">
+        <h3>1. Doutrina sadia × falsa doutrina</h3>
+        <div class="ref">1Tm 1 · 4 · 6</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+      <button class="card" data-id="t1-2">
+        <h3>2. Oração e liderança na igreja</h3>
+        <div class="ref">1Tm 2 – 3</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+      <button class="card" data-id="t1-3">
+        <h3>3. O caráter do líder</h3>
+        <div class="ref">1Tm 3:1-13 · 4:12</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+      <button class="card" data-id="t1-4">
+        <h3>4. Piedade e contentamento</h3>
+        <div class="ref">1Tm 4 · 6:6-10</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+      <button class="card" data-id="t1-5">
+        <h3>5. O combate da fé</h3>
+        <div class="ref">1Tm 6:11-16</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+    </div>
+  </section>
+
+  <div class="conector"><span></span></div>
+
+  <!-- 2 TIMÓTEO -->
+  <section style="--c:#047857">
+    <div class="secao-cab">
+      <div class="num">2</div>
+      <div><h2>2 Timóteo — Coragem, sofrimento e legado</h2>
+      <small>A última carta de Paulo: transmitir a tocha a homens fiéis</small></div>
+    </div>
+    <div class="grade">
+      <button class="card" data-id="t2-1">
+        <h3>1. Não se envergonhar do evangelho</h3>
+        <div class="ref">2Tm 1</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+      <button class="card" data-id="t2-2">
+        <h3>2. Sofrer como bom soldado</h3>
+        <div class="ref">2Tm 2:1-13</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+      <button class="card" data-id="t2-3">
+        <h3>3. A Palavra e os homens fiéis</h3>
+        <div class="ref">2Tm 2:2,15 · 3:14-17</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+      <button class="card" data-id="t2-4">
+        <h3>4. Últimos dias e fidelidade</h3>
+        <div class="ref">2Tm 3 – 4:5</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+      <button class="card" data-id="t2-5">
+        <h3>5. O combate final e a coroa</h3>
+        <div class="ref">2Tm 4:6-8</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+    </div>
+  </section>
+
+  <div class="conector"><span></span></div>
+
+  <!-- INTEGRAÇÃO -->
+  <section style="--c:#b45309">
+    <div class="secao-cab">
+      <div class="num">3</div>
+      <div><h2>Integração: o homem de Deus</h2>
+      <small>As duas cartas convergem num só perfil — 1Tm 6:11</small></div>
+    </div>
+    <div class="grade">
+      <button class="card" data-id="int-1">
+        <h3>Caráter: irrepreensível e piedoso</h3>
+        <div class="ref">1Tm 3:2-3 · 4:12 · 2Tm 2:22</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+      <button class="card" data-id="int-2">
+        <h3>Doutrina: a Bíblia como regra de fé</h3>
+        <div class="ref">2Tm 3:16-17 · 1Tm 4:16</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+      <button class="card" data-id="int-3">
+        <h3>Missão: ensinar e formar outros</h3>
+        <div class="ref">2Tm 2:2 · 4:2,5</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+      <button class="card" data-id="int-4">
+        <h3>Perseverança: sofrer e permanecer fiel</h3>
+        <div class="ref">2Tm 2:3 · 3:14 · 4:7</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+    </div>
+  </section>
+
+  <div class="conector"><span></span></div>
+
+  <!-- APLICAÇÃO -->
+  <section style="--c:#6d28d9">
+    <div class="secao-cab">
+      <div class="num">4</div>
+      <div><h2>Aplicação à igreja hoje</h2>
+      <small>O que isso muda na nossa vida e na nossa igreja</small></div>
+    </div>
+    <div class="grade">
+      <button class="card" data-id="apl-1">
+        <h3>Reconhecer líderes pelo caráter</h3>
+        <div class="ref">1Tm 3:1-10</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+      <button class="card" data-id="apl-2">
+        <h3>Formar discipuladores</h3>
+        <div class="ref">2Tm 2:2 · 1Tm 4:6</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+      <button class="card" data-id="apl-3">
+        <h3>Guardar a sã doutrina</h3>
+        <div class="ref">1Tm 6:20-21 · 2Tm 1:13-14</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+      <button class="card" data-id="apl-4">
+        <h3>Viver piedade, coragem e fidelidade</h3>
+        <div class="ref">1Tm 4:7-8 · 2Tm 1:7 · 4:5</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+    </div>
+  </section>
+
+  <div class="conector"><span></span></div>
+
+  <!-- DESAFIO -->
+  <section style="--c:#b91c1c">
+    <div class="secao-cab">
+      <div class="num">5</div>
+      <div><h2>Desafio final</h2>
+      <small>Levantar homens de Deus comprometidos com a Palavra</small></div>
+    </div>
+    <div class="grade">
+      <button class="card" data-id="desafio">
+        <h3>“Ó homem de Deus… milita a boa milícia da fé”</h3>
+        <div class="ref">1Tm 6:11-12 · 2Tm 2:2 · 4:6-8</div>
+        <div class="mais"><span>Ver versículos</span><span>→</span></div>
+      </button>
+    </div>
+  </section>
+
+  <footer>Texto bíblico: Almeida Revista e Corrigida · Estudo para edificação da igreja</footer>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-caixa" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <div class="modal-topo">
+      <div>
+        <h2 id="modal-titulo"></h2>
+        <span class="ref" id="modal-ref"></span>
+      </div>
+      <button class="fechar" id="fechar" aria-label="Fechar">✕</button>
+    </div>
+    <div class="modal-corpo" id="modal-corpo"></div>
+  </div>
+</div>
+
+<script>
+const DADOS = {
+
+  /* ---------- INTRODUÇÃO ---------- */
+  intro: {
+    titulo: "Contexto e tema central",
+    ref: "1Tm 3:14-15 · 2Tm 3:16-17 · 2Tm 2:2",
+    cor: "#57534e",
+    versiculos: [
+      ["1 Timóteo 3:14-15", "Estas coisas te escrevo, esperando vir ter contigo brevemente; mas, se tardar, para que saibas como convém andar na casa de Deus, que é a igreja do Deus vivo, a coluna e firmeza da verdade."],
+      ["2 Timóteo 3:16-17", "Toda a Escritura é divinamente inspirada, e proveitosa para ensinar, para redarguir, para corrigir, para instruir em justiça; para que o homem de Deus seja perfeito, e perfeitamente instruído para toda a boa obra."],
+      ["2 Timóteo 2:2", "E o que de mim, entre muitas testemunhas, ouviste, confia-o a homens fiéis, que sejam idôneos para também ensinarem os outros."]
+    ]
+  },
+
+  /* ---------- 1 TIMÓTEO ---------- */
+  "t1-1": {
+    titulo: "Doutrina sadia × falsa doutrina",
+    ref: "1 Timóteo 1:3-4 · 4:1-2 · 6:3-5",
+    cor: "#1d4ed8",
+    versiculos: [
+      ["1 Timóteo 1:3-4", "Como te roguei, quando partia para a Macedônia, que ficasses em Éfeso, para advertires a alguns, que não ensinem outra doutrina, nem se deem a fábulas ou a genealogias intermináveis, que mais produzem questões do que edificação de Deus, que consiste na fé; assim o faço agora."],
+      ["1 Timóteo 4:1-2", "Mas o Espírito expressamente diz que nos últimos tempos apostatarão alguns da fé, dando ouvidos a espíritos enganadores, e a doutrinas de demônios; pela hipocrisia de homens que falam mentiras, tendo cauterizada a sua própria consciência."],
+      ["1 Timóteo 6:3-5", "Se alguém ensina alguma outra doutrina, e se não conforma com as sãs palavras de nosso Senhor Jesus Cristo, e com a doutrina que é segundo a piedade, é soberbo, e nada sabe, mas delira acerca de questões e contendas de palavras, das quais nascem invejas, porfias, blasfêmias, ruins suspeitas, contendas de homens corruptos de entendimento, e privados da verdade, cuidando que a piedade seja causa de ganho; aparta-te dos tais."],
+      ["1 Timóteo 4:6", "Propondo estas coisas aos irmãos, serás bom ministro de Jesus Cristo, criado com as palavras da fé e da boa doutrina que tens seguido."]
+    ]
+  },
+
+  "t1-2": {
+    titulo: "Oração e liderança na igreja",
+    ref: "1 Timóteo 2:1-2,5-6,8 · 3:15",
+    cor: "#1d4ed8",
+    versiculos: [
+      ["1 Timóteo 2:1-2", "Admoesto-te, pois, antes de tudo, que se façam deprecações, orações, intercessões, e ações de graças, por todos os homens; pelos reis, e por todos os que estão em eminência, para que tenhamos uma vida quieta e sossegada, em toda a piedade e honestidade."],
+      ["1 Timóteo 2:5-6", "Porque há um só Deus, e um só Mediador entre Deus e os homens, Jesus Cristo homem, o qual se deu a si mesmo em preço de redenção por todos, para servir de testemunho a seu tempo."],
+      ["1 Timóteo 2:8", "Quero, pois, que os homens orem em todo o lugar, levantando mãos santas, sem ira nem contenda."],
+      ["1 Timóteo 3:15", "Para que saibas como convém andar na casa de Deus, que é a igreja do Deus vivo, a coluna e firmeza da verdade."]
+    ]
+  },
+
+  "t1-3": {
+    titulo: "O caráter do líder",
+    ref: "1 Timóteo 3:1-13 · 4:12",
+    cor: "#1d4ed8",
+    versiculos: [
+      ["1 Timóteo 3:1", "Esta é uma palavra fiel: se alguém deseja o episcopado, excelente obra deseja."],
+      ["1 Timóteo 3:2-3", "Convém, pois, que o bispo seja irrepreensível, marido de uma mulher, vigilante, sóbrio, honesto, hospitaleiro, apto para ensinar; não dado ao vinho, não espancador, não cobiçoso de torpe ganância, mas moderado, não contencioso, não avarento."],
+      ["1 Timóteo 3:4-5", "Que governe bem a sua própria casa, tendo seus filhos em sujeição, com toda a modéstia (porque, se alguém não sabe governar a sua própria casa, terá cuidado da igreja de Deus?)."],
+      ["1 Timóteo 3:6-7", "Não neófito, para que, ensoberbecido, não caia na condenação do diabo. Convém também que tenha bom testemunho dos que estão de fora, para que não caia em afronta, e no laço do diabo."],
+      ["1 Timóteo 3:8-10", "Da mesma sorte os diáconos sejam honestos, não de língua dobre, não dados a muito vinho, não cobiçosos de torpe ganância; guardando o mistério da fé numa consciência pura. E também estes sejam primeiro provados, depois sirvam, se forem irrepreensíveis."],
+      ["1 Timóteo 3:13", "Porque os que servirem bem como diáconos, adquirirão para si uma boa posição e muita confiança na fé que há em Cristo Jesus."],
+      ["1 Timóteo 4:12", "Ninguém despreze a tua mocidade; mas sê o exemplo dos fiéis, na palavra, no trato, no amor, no espírito, na fé, na pureza."]
+    ]
+  },
+
+  "t1-4": {
+    titulo: "Piedade e contentamento",
+    ref: "1 Timóteo 4:7-8,15-16 · 6:6-10",
+    cor: "#1d4ed8",
+    versiculos: [
+      ["1 Timóteo 4:7-8", "Mas rejeita as fábulas profanas e de velhas, e exercita-te a ti mesmo em piedade. Porque o exercício corporal para pouco aproveita, mas a piedade para tudo é proveitosa, tendo a promessa da vida presente e da que há de vir."],
+      ["1 Timóteo 4:15-16", "Medita estas coisas; ocupa-te nelas, para que o teu aproveitamento seja manifesto a todos. Tem cuidado de ti mesmo e da doutrina; persevera nestas coisas; porque, fazendo isto, te salvarás, tanto a ti mesmo como aos que te ouvem."],
+      ["1 Timóteo 6:6-8", "Mas é grande ganho a piedade com contentamento. Porque nada trouxemos para este mundo, e manifesto é que nada podemos levar dele. Tendo, porém, sustento, e com que nos cobrirmos, estejamos com isso contentes."],
+      ["1 Timóteo 6:9-10", "Mas os que querem ser ricos caem em tentação, e em laço, e em muitas concupiscências loucas e nocivas, que submergem os homens na perdição e ruína. Porque o amor ao dinheiro é a raiz de todos os males; e nisto alguns, cobiçando, se desviaram da fé, e se traspassaram a si mesmos com muitas dores."]
+    ]
+  },
+
+  "t1-5": {
+    titulo: "O combate da fé",
+    ref: "1 Timóteo 1:18-19 · 6:11-16",
+    cor: "#1d4ed8",
+    versiculos: [
+      ["1 Timóteo 1:18-19", "Este mandamento te dou, meu filho Timóteo, que, segundo as profecias que houve acerca de ti, milites por elas boa milícia; conservando a fé, e a boa consciência, rejeitando a qual alguns fizeram naufrágio na fé."],
+      ["1 Timóteo 6:11-12", "Mas tu, ó homem de Deus, foge destas coisas, e segue a justiça, a piedade, a fé, o amor, a paciência, a mansidão. Milita a boa milícia da fé, toma posse da vida eterna, para a qual também foste chamado, tendo já feito boa confissão diante de muitas testemunhas."],
+      ["1 Timóteo 6:13-14", "Mando-te diante de Deus, que todas as coisas vivifica, e de Cristo Jesus, que diante de Pôncio Pilatos deu o testemunho de boa confissão, que guardes este mandamento sem mácula e irrepreensível, até à manifestação de nosso Senhor Jesus Cristo."],
+      ["1 Timóteo 6:15-16", "A qual, em suas épocas determinadas, há de ser revelada pelo bendito e único Soberano, o Rei dos reis e Senhor dos senhores; o único que possui imortalidade, que habita em luz inacessível, a quem homem algum viu, nem pode ver; a quem honra e poder eterno. Amém."]
+    ]
+  },
+
+  /* ---------- 2 TIMÓTEO ---------- */
+  "t2-1": {
+    titulo: "Não se envergonhar do evangelho",
+    ref: "2 Timóteo 1:6-8,12-14",
+    cor: "#047857",
+    versiculos: [
+      ["2 Timóteo 1:6-7", "Por cujo motivo te lembro que despertes o dom de Deus que existe em ti pela imposição das minhas mãos. Porque Deus não nos deu o espírito de temor, mas de fortaleza, e de amor, e de moderação."],
+      ["2 Timóteo 1:8", "Portanto, não te envergonhes do testemunho de nosso Senhor, nem de mim, que sou prisioneiro seu; antes participa das aflições do evangelho segundo o poder de Deus."],
+      ["2 Timóteo 1:12", "Por cujo motivo também padeço estas coisas; mas não me envergonho, porque sei em quem tenho crido, e estou certo de que é poderoso para guardar o meu depósito até àquele dia."],
+      ["2 Timóteo 1:13-14", "Conserva o modelo das sãs palavras que de mim tens ouvido, na fé e no amor que há em Cristo Jesus. Guarda o bom depósito pelo Espírito Santo que habita em nós."]
+    ]
+  },
+
+  "t2-2": {
+    titulo: "Sofrer como bom soldado",
+    ref: "2 Timóteo 2:1-13",
+    cor: "#047857",
+    versiculos: [
+      ["2 Timóteo 2:1-2", "Tu, pois, meu filho, fortifica-te na graça que há em Cristo Jesus. E o que de mim, entre muitas testemunhas, ouviste, confia-o a homens fiéis, que sejam idôneos para também ensinarem os outros."],
+      ["2 Timóteo 2:3-4", "Sofre, pois, comigo, como bom soldado de Jesus Cristo. Ninguém que milita se embaraça com negócios desta vida, a fim de agradar àquele que o alistou para a guerra."],
+      ["2 Timóteo 2:5-6", "E, se alguém também milita, não é coroado se não militar legitimamente. O lavrador que trabalha deve ser o primeiro a gozar dos frutos."],
+      ["2 Timóteo 2:11-13", "Palavra fiel é esta: que, se morrermos com ele, também com ele viveremos; se sofrermos, também com ele reinaremos; se o negarmos, também ele nos negará; se formos infiéis, ele permanece fiel; não pode negar-se a si mesmo."]
+    ]
+  },
+
+  "t2-3": {
+    titulo: "A Palavra e os homens fiéis",
+    ref: "2 Timóteo 2:2,15 · 3:14-17",
+    cor: "#047857",
+    versiculos: [
+      ["2 Timóteo 2:2", "E o que de mim, entre muitas testemunhas, ouviste, confia-o a homens fiéis, que sejam idôneos para também ensinarem os outros."],
+      ["2 Timóteo 2:15", "Procura apresentar-te a Deus aprovado, como obreiro que não tem de que se envergonhar, que maneja bem a palavra da verdade."],
+      ["2 Timóteo 3:14-15", "Tu, porém, permanece naquilo que aprendeste, e de que foste inteirado, sabendo de quem o tens aprendido, e que desde a tua meninice sabes as sagradas Escrituras, que podem fazer-te sábio para a salvação, pela fé que há em Cristo Jesus."],
+      ["2 Timóteo 3:16-17", "Toda a Escritura é divinamente inspirada, e proveitosa para ensinar, para redarguir, para corrigir, para instruir em justiça; para que o homem de Deus seja perfeito, e perfeitamente instruído para toda a boa obra."]
+    ]
+  },
+
+  "t2-4": {
+    titulo: "Últimos dias e fidelidade",
+    ref: "2 Timóteo 3:1-5,12-13 · 4:1-5",
+    cor: "#047857",
+    versiculos: [
+      ["2 Timóteo 3:1-5", "Sabe, porém, isto: que nos últimos dias sobrevirão tempos trabalhosos. Porque haverá homens amantes de si mesmos, avarentos, presunçosos, soberbos, blasfemos, desobedientes a pais e mães, ingratos, profanos, sem afeto natural, irreconciliáveis, caluniadores, incontinentes, cruéis, sem amor para com os bons, traidores, obstinados, orgulhosos, mais amigos dos deleites do que amigos de Deus, tendo aparência de piedade, mas negando a eficácia dela. Destes afasta-te."],
+      ["2 Timóteo 3:12-13", "E também todos os que piamente querem viver em Cristo Jesus padecerão perseguições. Mas os homens maus e enganadores irão de mal para pior, enganando e sendo enganados."],
+      ["2 Timóteo 4:1-2", "Conjuro-te, pois, diante de Deus, e do Senhor Jesus Cristo, que há de julgar os vivos e os mortos, na sua vinda e no seu reino, que pregues a palavra, instes a tempo e fora de tempo, redarguas, repreendas, exortes, com toda a longanimidade e doutrina."],
+      ["2 Timóteo 4:3-4", "Porque virá tempo em que não suportarão a sã doutrina; mas, tendo comichão nos ouvidos, amontoarão para si doutores conforme as suas próprias concupiscências; e desviarão os ouvidos da verdade, voltando às fábulas."],
+      ["2 Timóteo 4:5", "Mas tu, sê sóbrio em tudo, sofre as aflições, faze a obra de um evangelista, cumpre o teu ministério."]
+    ]
+  },
+
+  "t2-5": {
+    titulo: "O combate final e a coroa",
+    ref: "2 Timóteo 4:6-10,16-17",
+    cor: "#047857",
+    versiculos: [
+      ["2 Timóteo 4:6-8", "Porque eu já estou sendo oferecido por aspersão de sacrifício, e o tempo da minha partida está próximo. Combati o bom combate, acabei a carreira, guardei a fé. Desde agora, a coroa da justiça me está guardada, a qual o Senhor, justo juiz, me dará naquele dia; e não somente a mim, mas também a todos os que amarem a sua vinda."],
+      ["2 Timóteo 4:10", "Porque Demas me desamparou, amando o presente século, e foi para Tessalônica."],
+      ["2 Timóteo 4:16-17", "Na minha primeira defesa, ninguém assistiu a ela, antes todos me desampararam. Que isto não lhes seja imputado. Mas o Senhor assistiu-me e fortaleceu-me, para que por mim fosse cumprida a pregação, e todos os gentios a ouvissem; e fiquei livre da boca do leão."]
+    ]
+  },
+
+  /* ---------- INTEGRAÇÃO ---------- */
+  "int-1": {
+    titulo: "Caráter: irrepreensível e piedoso",
+    ref: "1 Timóteo 3:2-3 · 4:12 · 6:11 · 2 Timóteo 2:22",
+    cor: "#b45309",
+    versiculos: [
+      ["1 Timóteo 3:2-3", "Convém, pois, que o bispo seja irrepreensível, marido de uma mulher, vigilante, sóbrio, honesto, hospitaleiro, apto para ensinar; não dado ao vinho, não espancador, não cobiçoso de torpe ganância, mas moderado, não contencioso, não avarento."],
+      ["1 Timóteo 4:12", "Ninguém despreze a tua mocidade; mas sê o exemplo dos fiéis, na palavra, no trato, no amor, no espírito, na fé, na pureza."],
+      ["1 Timóteo 6:11", "Mas tu, ó homem de Deus, foge destas coisas, e segue a justiça, a piedade, a fé, o amor, a paciência, a mansidão."],
+      ["2 Timóteo 2:22", "Foge também das paixões da mocidade; e segue a justiça, a fé, o amor, e a paz com os que, com um coração puro, invocam o Senhor."]
+    ]
+  },
+
+  "int-2": {
+    titulo: "Doutrina: a Bíblia como regra de fé e prática",
+    ref: "2 Timóteo 3:16-17 · 1:13-14 · 1 Timóteo 4:16 · 6:20",
+    cor: "#b45309",
+    versiculos: [
+      ["2 Timóteo 3:16-17", "Toda a Escritura é divinamente inspirada, e proveitosa para ensinar, para redarguir, para corrigir, para instruir em justiça; para que o homem de Deus seja perfeito, e perfeitamente instruído para toda a boa obra."],
+      ["2 Timóteo 1:13-14", "Conserva o modelo das sãs palavras que de mim tens ouvido, na fé e no amor que há em Cristo Jesus. Guarda o bom depósito pelo Espírito Santo que habita em nós."],
+      ["1 Timóteo 4:16", "Tem cuidado de ti mesmo e da doutrina; persevera nestas coisas; porque, fazendo isto, te salvarás, tanto a ti mesmo como aos que te ouvem."],
+      ["1 Timóteo 6:20", "Ó Timóteo, guarda o depósito que te foi confiado, tendo horror aos clamores vãos e profanos e às contradições da ciência falsamente chamada."]
+    ]
+  },
+
+  "int-3": {
+    titulo: "Missão: ensinar, corrigir e formar outros",
+    ref: "2 Timóteo 2:2 · 4:2,5 · 1 Timóteo 4:6",
+    cor: "#b45309",
+    versiculos: [
+      ["2 Timóteo 2:2", "E o que de mim, entre muitas testemunhas, ouviste, confia-o a homens fiéis, que sejam idôneos para também ensinarem os outros."],
+      ["2 Timóteo 4:2", "Que pregues a palavra, instes a tempo e fora de tempo, redarguas, repreendas, exortes, com toda a longanimidade e doutrina."],
+      ["2 Timóteo 4:5", "Mas tu, sê sóbrio em tudo, sofre as aflições, faze a obra de um evangelista, cumpre o teu ministério."],
+      ["1 Timóteo 4:6", "Propondo estas coisas aos irmãos, serás bom ministro de Jesus Cristo, criado com as palavras da fé e da boa doutrina que tens seguido."]
+    ]
+  },
+
+  "int-4": {
+    titulo: "Perseverança: sofrer e permanecer fiel",
+    ref: "2 Timóteo 2:3 · 3:14 · 4:7 · 1 Timóteo 6:12",
+    cor: "#b45309",
+    versiculos: [
+      ["2 Timóteo 2:3", "Sofre, pois, comigo, como bom soldado de Jesus Cristo."],
+      ["2 Timóteo 3:14", "Tu, porém, permanece naquilo que aprendeste, e de que foste inteirado, sabendo de quem o tens aprendido."],
+      ["2 Timóteo 4:7", "Combati o bom combate, acabei a carreira, guardei a fé."],
+      ["1 Timóteo 6:12", "Milita a boa milícia da fé, toma posse da vida eterna, para a qual também foste chamado, tendo já feito boa confissão diante de muitas testemunhas."]
+    ]
+  },
+
+  /* ---------- APLICAÇÃO ---------- */
+  "apl-1": {
+    titulo: "Reconhecer líderes pelo caráter, não só pelo dom",
+    ref: "1 Timóteo 3:1-10",
+    cor: "#6d28d9",
+    versiculos: [
+      ["1 Timóteo 3:1", "Esta é uma palavra fiel: se alguém deseja o episcopado, excelente obra deseja."],
+      ["1 Timóteo 3:2-3", "Convém, pois, que o bispo seja irrepreensível, marido de uma mulher, vigilante, sóbrio, honesto, hospitaleiro, apto para ensinar; não dado ao vinho, não espancador, não cobiçoso de torpe ganância, mas moderado, não contencioso, não avarento."],
+      ["1 Timóteo 3:4-5", "Que governe bem a sua própria casa, tendo seus filhos em sujeição, com toda a modéstia (porque, se alguém não sabe governar a sua própria casa, terá cuidado da igreja de Deus?)."],
+      ["1 Timóteo 3:10", "E também estes sejam primeiro provados, depois sirvam, se forem irrepreensíveis."]
+    ]
+  },
+
+  "apl-2": {
+    titulo: "Formar discipuladores — 2Tm 2:2",
+    ref: "2 Timóteo 2:2 · 1 Timóteo 4:6 · 2 Timóteo 2:15",
+    cor: "#6d28d9",
+    versiculos: [
+      ["2 Timóteo 2:2", "E o que de mim, entre muitas testemunhas, ouviste, confia-o a homens fiéis, que sejam idôneos para também ensinarem os outros."],
+      ["1 Timóteo 4:6", "Propondo estas coisas aos irmãos, serás bom ministro de Jesus Cristo, criado com as palavras da fé e da boa doutrina que tens seguido."],
+      ["2 Timóteo 2:15", "Procura apresentar-te a Deus aprovado, como obreiro que não tem de que se envergonhar, que maneja bem a palavra da verdade."]
+    ]
+  },
+
+  "apl-3": {
+    titulo: "Guardar a sã doutrina",
+    ref: "1 Timóteo 6:20-21 · 2 Timóteo 1:13-14 · 4:3-4",
+    cor: "#6d28d9",
+    versiculos: [
+      ["1 Timóteo 6:20-21", "Ó Timóteo, guarda o depósito que te foi confiado, tendo horror aos clamores vãos e profanos e às contradições da ciência falsamente chamada, a qual professando-a alguns, se desviaram da fé. A graça seja contigo. Amém."],
+      ["2 Timóteo 1:13-14", "Conserva o modelo das sãs palavras que de mim tens ouvido, na fé e no amor que há em Cristo Jesus. Guarda o bom depósito pelo Espírito Santo que habita em nós."],
+      ["2 Timóteo 4:3-4", "Porque virá tempo em que não suportarão a sã doutrina; mas, tendo comichão nos ouvidos, amontoarão para si doutores conforme as suas próprias concupiscências; e desviarão os ouvidos da verdade, voltando às fábulas."]
+    ]
+  },
+
+  "apl-4": {
+    titulo: "Viver piedade, coragem e fidelidade",
+    ref: "1 Timóteo 4:7-8 · 2 Timóteo 1:7 · 4:5",
+    cor: "#6d28d9",
+    versiculos: [
+      ["1 Timóteo 4:7-8", "Mas rejeita as fábulas profanas e de velhas, e exercita-te a ti mesmo em piedade. Porque o exercício corporal para pouco aproveita, mas a piedade para tudo é proveitosa, tendo a promessa da vida presente e da que há de vir."],
+      ["2 Timóteo 1:7", "Porque Deus não nos deu o espírito de temor, mas de fortaleza, e de amor, e de moderação."],
+      ["2 Timóteo 4:5", "Mas tu, sê sóbrio em tudo, sofre as aflições, faze a obra de um evangelista, cumpre o teu ministério."]
+    ]
+  },
+
+  /* ---------- DESAFIO ---------- */
+  desafio: {
+    titulo: "Desafio final: levantar homens de Deus",
+    ref: "1 Timóteo 6:11-12 · 2 Timóteo 2:2 · 3:16-17 · 4:6-8",
+    cor: "#b91c1c",
+    versiculos: [
+      ["1 Timóteo 6:11-12", "Mas tu, ó homem de Deus, foge destas coisas, e segue a justiça, a piedade, a fé, o amor, a paciência, a mansidão. Milita a boa milícia da fé, toma posse da vida eterna, para a qual também foste chamado, tendo já feito boa confissão diante de muitas testemunhas."],
+      ["2 Timóteo 2:2", "E o que de mim, entre muitas testemunhas, ouviste, confia-o a homens fiéis, que sejam idôneos para também ensinarem os outros."],
+      ["2 Timóteo 3:16-17", "Toda a Escritura é divinamente inspirada, e proveitosa para ensinar, para redarguir, para corrigir, para instruir em justiça; para que o homem de Deus seja perfeito, e perfeitamente instruído para toda a boa obra."],
+      ["2 Timóteo 4:6-8", "Porque eu já estou sendo oferecido por aspersão de sacrifício, e o tempo da minha partida está próximo. Combati o bom combate, acabei a carreira, guardei a fé. Desde agora, a coroa da justiça me está guardada, a qual o Senhor, justo juiz, me dará naquele dia; e não somente a mim, mas também a todos os que amarem a sua vinda."]
+    ]
+  }
+};
+
+/* ---------- LÓGICA DO MODAL ---------- */
+const modal   = document.getElementById('modal');
+const caixa   = modal.querySelector('.modal-caixa');
+const elTit   = document.getElementById('modal-titulo');
+const elRef   = document.getElementById('modal-ref');
+const elCorpo = document.getElementById('modal-corpo');
+const btnFechar = document.getElementById('fechar');
+let ultimoFoco = null;
+
+function abrir(id){
+  const d = DADOS[id];
+  if(!d) return;
+
+  ultimoFoco = document.activeElement;
+
+  elTit.textContent = d.titulo;
+  elRef.textContent = d.ref;
+  caixa.style.setProperty('--c', d.cor);
+
+  elCorpo.innerHTML = d.versiculos.map(([ref, texto]) => `
+    <div class="versiculo" style="--c:${d.cor}">
+      <b>${ref}</b>
+      <p>${texto}</p>
+    </div>
+  `).join('');
+
+  modal.classList.add('aberto');
+  modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+  btnFechar.focus();
+}
+
+function fechar(){
+  modal.classList.remove('aberto');
+  modal.setAttribute('aria-hidden','true');
+  document.body.style.overflow = '';
+  if(ultimoFoco) ultimoFoco.focus();
+}
+
+document.addEventListener('click', e => {
+  const card = e.target.closest('.card');
+  if(card){ abrir(card.dataset.id); }
+});
+document.addEventListener('keydown', e => {
+  const card = document.activeElement;
+  if((e.key === 'Enter' || e.key === ' ') && card && card.classList.contains('card')){
+    e.preventDefault(); abrir(card.dataset.id);
+  }
+  if(e.key === 'Escape' && modal.classList.contains('aberto')) fechar();
+});
+btnFechar.addEventListener('click', fechar);
+modal.addEventListener('click', e => { if(e.target === modal) fechar(); });
+</script>
+</body>
+</html>
